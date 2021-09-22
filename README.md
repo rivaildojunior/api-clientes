@@ -27,7 +27,6 @@ docker build -f Dockerfile --build-arg JAR_FILE=target/api-clientes-0.0.1-SNAPSH
 ```
 kubectl create -f deployment.yaml
 kubectl create -f service.yaml
-kubectl create -f ingress.yaml
 ```
 
 
