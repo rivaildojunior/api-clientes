@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "31465d8c-563e-453c-9e00-142a3d31e296",
+		"name": "api-clientes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/clientes?nome=Joao",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Joao"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gravar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"\",\r\n    \"endereco\":\"Rua Arcoverde\",\r\n    \"documento\":\"\",\r\n    \"dataNascimento\":\"1992-07-19\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/clientes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/clientes/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/clientes/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"eu1\",\r\n    \"endereco\":\"teste\",\r\n    \"documento\":\"123\",\r\n    \"dataNascimento\":\"1992-07-19\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/clientes/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ativar/Desativar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "false",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/clientes/1/ativo",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes",
+						"1",
+						"ativo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
