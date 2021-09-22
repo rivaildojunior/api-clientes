@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/clientes?nome=Rivaildo",
+					"raw": "{{url}}/clientes?page=0&size=10",
 					"host": [
 						"{{url}}"
 					],
@@ -20,8 +20,12 @@
 					],
 					"query": [
 						{
-							"key": "nome",
-							"value": "Rivaildo"
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
 						}
 					]
 				}
