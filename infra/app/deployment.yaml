@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cliente-api
+  labels:
+    app: cliente-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cliente-api
+  template:
+    metadata:
+      labels:
+        app: cliente-api
+    spec:
+      containers:
+        - name: cliente-api
+          image: cliente-api:v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8081
+          env:
+            - name: POSTGRES_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-configmap
+                  key: database_url
+            - name: POSTGRES_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-configmap
+                  key: database_user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-configmap
+                  key: database_password
